@@ -54,7 +54,7 @@ health-hub-automation/
 ### Installation
 1. Clone repository:
    ```bash
-   git clone https://github.com/your-repo/health-hub-automation.git
+https://github.com/Polo1996134/Health-Hub-Web-Application-Selenium-Project.git
    ```
 2. Download browser drivers:
    - [ChromeDriver](https://chromedriver.chromium.org/)
