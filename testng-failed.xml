@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="3" parallel="tests" name="Failed suite [HealthHub_Suite]" guice-stage="DEVELOPMENT">
+<suite thread-count="3" parallel="classes" name="Failed suite [HealthHub_Automation_Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="headless" value="false"/>
   <parameter name="browser" value="chrome"/>
+  <parameter name="env" value="staging"/>
   <listeners>
     <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"/>
   </listeners>
-  <test thread-count="3" parallel="tests" name="Firefox_Tests(failed)">
-    <parameter name="browser" value="firefox"/>
+  <test thread-count="3" parallel="classes" name="Login_Module_Tests(failed)">
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="testValidLogin"/>
           <include name="setUp"/>
+          <include name="testValidLogin"/>
           <include name="tearDown"/>
           <include name="testInvalidLogin"/>
           <include name="setUpSuite"/>
@@ -19,9 +20,8 @@
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>
-  </test> <!-- Firefox_Tests(failed) -->
-  <test thread-count="3" parallel="tests" name="Chrome_Tests(failed)">
-    <parameter name="browser" value="chrome"/>
+  </test> <!-- Login_Module_Tests(failed) -->
+  <test thread-count="3" parallel="classes" name="Cart_Module_Tests(failed)">
     <classes>
       <class name="tests.CartTest">
         <methods>
@@ -33,6 +33,48 @@
           <include name="tearDownSuite"/>
         </methods>
       </class> <!-- tests.CartTest -->
+    </classes>
+  </test> <!-- Cart_Module_Tests(failed) -->
+  <test thread-count="3" parallel="classes" name="Checkout_Module_Tests(failed)">
+    <classes>
+      <class name="tests.CheckoutTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="testCheckoutProcess"/>
+          <include name="tearDown"/>
+          <include name="setUpSuite"/>
+          <include name="tearDownSuite"/>
+        </methods>
+      </class> <!-- tests.CheckoutTest -->
+    </classes>
+  </test> <!-- Checkout_Module_Tests(failed) -->
+  <test thread-count="3" parallel="classes" name="Browsers_Compatibility(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="testValidLogin"/>
+          <include name="tearDown"/>
+          <include name="testInvalidLogin"/>
+          <include name="setUpSuite"/>
+          <include name="tearDownSuite"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+      <class name="tests.ProductSearchTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testPriceFilter"/>
+          <include name="testSortProducts"/>
+          <include name="setUpSuite"/>
+          <include name="tearDownSuite"/>
+        </methods>
+      </class> <!-- tests.ProductSearchTest -->
+    </classes>
+  </test> <!-- Browsers_Compatibility(failed) -->
+  <test thread-count="3" parallel="classes" name="Smoke_Suite(failed)">
+    <classes>
       <class name="tests.LoginTest">
         <methods>
           <include name="testValidLogin"/>
@@ -44,5 +86,5 @@
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>
-  </test> <!-- Chrome_Tests(failed) -->
-</suite> <!-- Failed suite [HealthHub_Suite] -->
+  </test> <!-- Smoke_Suite(failed) -->
+</suite> <!-- Failed suite [HealthHub_Automation_Suite] -->
