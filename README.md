@@ -2,6 +2,8 @@
 
 # Health Hub Automation Testing Framework
 
+URL:- https://health-hub-rust.vercel.app/
+
 ![Selenium](https://img.shields.io/badge/Selenium-4.1.2-green)
 ![TestNG](https://img.shields.io/badge/TestNG-7.4.0-red)
 ![ExtentReports](https://img.shields.io/badge/ExtentReports-5.0.9-blue)
